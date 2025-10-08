@@ -24,6 +24,32 @@
   scroll-behavior: smooth;
 }
 
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Touch-friendly buttons */
+button, .nav-link, .cta-button, .project-button {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus,
+.nav-link:focus {
+  outline: 2px solid var(--portfolio-primary);
+  outline-offset: 2px;
+}
+
 body {
   background: var(--portfolio-bg);
   color: var(--portfolio-text);
@@ -517,24 +543,287 @@ p  { font-size: 1rem; color: var(--portfolio-text); }
   font-size: 1.1rem;
 }
 
-/* Responsive design improvements */
-@media (max-width: 768px) {
+/* =========================
+   Responsive Design
+   ========================= */
+
+/* Mobile First Approach */
+@media (max-width: 480px) {
+  /* Typography */
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+  
+  /* Navigation */
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  
+  /* Home Section */
+  .home-section {
+    padding: 3rem 1rem;
+  }
+  
+  .tagline {
+    font-size: 1rem;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  
+  /* About Section */
+  .about-section {
+    padding: 3rem 1rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .team-member {
+    padding: 1rem;
+  }
+  
+  /* Project Section */
+  .project-section {
+    padding: 3rem 1rem;
+  }
+  
+  .project-content {
+    flex-direction: column;
+  }
+  
+  /* Weather Section */
+  .weather-section {
+    padding: 3rem 1rem;
+  }
+  
+  .search-section {
+    padding: 1rem;
+  }
+  
+  .search-input {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .search-input input {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .search-input button {
+    border-radius: 8px;
+    width: 100%;
+  }
+  
+  /* Sample Weather Cards */
+  .sample-weather {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .weather-card {
+    min-height: 120px;
+    padding: 1rem;
+  }
+  
+  .weather-card h3 {
+    font-size: 1rem;
+  }
+  
+  .weather-card .temperature {
+    font-size: 1.5rem;
+  }
+  
+  /* Current Weather */
+  .current-weather {
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  .current-temp {
+    font-size: 2rem;
+  }
+  
+  /* Forecast Grid */
   .forecast-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: 1fr;
     gap: 0.8rem;
   }
   
   .forecast-day {
-    min-height: 160px;
+    min-height: 140px;
     padding: 1rem;
+  }
+  
+  .forecast-day h4 {
+    font-size: 0.8rem;
+  }
+  
+  .weather-icon {
+    font-size: 1.5rem;
+  }
+  
+  .day-temp, .night-temp {
+    font-size: 1rem;
+  }
+  
+  /* Contact Section */
+  .contact-section {
+    padding: 3rem 1rem;
+  }
+}
+
+/* Tablet Portrait */
+@media (min-width: 481px) and (max-width: 768px) {
+  .nav-container {
+    gap: 1.5rem;
+  }
+  
+  .home-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .about-section, .project-section, .weather-section, .contact-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .project-content {
+    flex-direction: column;
+  }
+  
+  .sample-weather {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+  }
+  
+  .forecast-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
   
   .search-input input {
     width: 250px;
   }
+}
+
+/* Tablet Landscape */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   
-  .current-temp {
-    font-size: 2.5rem;
+  .sample-weather {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+  }
+  
+  .forecast-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .sample-weather {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .forecast-grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+/* Extra Large Screens */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .main-title {
+    font-size: 3.5rem;
+  }
+  
+  .forecast-grid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .home-section {
+    padding: 2rem 1rem;
+  }
+  
+  .about-section, .project-section, .weather-section, .contact-section {
+    padding: 2rem 1rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sample-weather {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .forecast-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .weather-icon {
+    font-size: 2.2rem;
+  }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .weather-section {
+    background: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  .search-section {
+    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+  }
+  
+  .current-weather {
+    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
   }
 }
 
