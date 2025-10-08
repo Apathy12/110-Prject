@@ -82,7 +82,6 @@ function updateCurrentWeather(data) {
 // Update forecast display
 function updateForecast(data) {
     const forecastDays = data.forecast.forecastday;
-    const dayNames = ['Today', 'Tomorrow', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
     // Get all forecast day elements
     const forecastDayElements = document.querySelectorAll('.forecast-day');
@@ -107,13 +106,40 @@ function updateForecast(data) {
             nightIcon.textContent = '🌙';
             nightTemp.textContent = `${Math.round(day.day.mintemp_c)}°C`;
 
-            // Update day name
+            // Update day name and date
             const dayName = dayElement.querySelector('h4');
             if (dayName) {
-                dayName.textContent = dayNames[index];
+                const date = new Date(day.date);
+                const dayNameText = getDayName(date, index);
+                const dateText = getDateText(date);
+                dayName.innerHTML = `${dayNameText}<br><small>${dateText}</small>`;
             }
         }
     });
+}
+
+// Get formatted day name
+function getDayName(date, index) {
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    
+    if (index === 0) {
+        return 'Today';
+    } else if (index === 1) {
+        return 'Tomorrow';
+    } else {
+        const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        return dayNames[date.getDay()];
+    }
+}
+
+// Get formatted date text
+function getDateText(date) {
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const day = date.getDate();
+    const month = monthNames[date.getMonth()];
+    return `${day} ${month}`;
 }
 
 // Show error message
