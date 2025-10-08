@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="weather.js" defer></script>
+    
+    <title>Group 7 - Weather Checker App Portfolio</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About Us</a>
+            <a href="#project" class="nav-link">Project</a>
+            <a href="#weather" class="nav-link">Weather App</a>
+            <a href="#contact" class="nav-link">Contact Us</a>
+        </div>
+    </nav>
+
+    <section id="home" class="home-section">
+        <div class="container">
+            <div class="home-content">
+                <h1 class="main-title">Group 7 - Weather Checker App</h1>
+                <p class="tagline">Your reliable weather companion, anytime, anywhere</p>
+                <p class="subtitle">Weather checker real-time weather updates made simple</p>
+                <p class="goal">Our goal is to provide a <span class="highlight">simple, accurate, and user-friendly</span> way to check the weather based on your location.</p>
+                <a href="#project" class="cta-button">View Our Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <p class="intro">We are a team of IT students passionate about building practical apps.</p>
+                
+                <div class="team-section">
+                    <h3>Team Members</h3>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <img src="jude.jpg" alt="Jude Anton T. Amancio" class="member-photo">
+                            <h4>Jude Anton T. Amancio</h4>
+                            <p>Backend Developer</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="angelbert.jpg" alt="Angelbert M. Sisora" class="member-photo">
+                            <h4>Angelbert M. Sisora</h4>
+                            <p>Frontend Developer</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="ted.jpg" alt="Ted Theone B. Cabañete" class="member-photo">
+                            <h4>Ted Theone B. Cabañete</h4>
+                            <p>Backend Developer</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="hanz.jpg" alt="Hanz Rexis S. Monoy" class="member-photo">
+                            <h4>Hanz Rexis S. Monoy</h4>
+                            <p>Frontend Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project" class="project-section">
+        <div class="container">
+            <h2>Project</h2>
+            <div class="project-content">
+                <div class="project-info">
+                    <h3>Weather Checker App</h3>
+                    <p class="project-description">Description: A web app that shows current weather and forecasts using API data.</p>
+                    
+                    <div class="features">
+                        <h4>Features</h4>
+                        <ul>
+                            <li>Real-time weather data</li>
+                            <li>7-day weather forecast</li>
+                            <li>Location-based weather information</li>
+                            <li>Responsive design for all devices</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#weather" class="project-button">View Weather Checker App</a>
+                    </div>
+                </div>
+                
+                <div class="project-preview">
+                    <div class="preview-card">
+                        <h4>Weather Checker App Preview</h4>
+                        <div class="preview-content">
+                            <p>🌤️ Current Weather</p>
+                            <p>📅 7-Day Forecast</p>
+                            <p>📍 Location-Based</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weather Checker App Section -->
+    <section id="weather" class="weather-section">
+        <div class="container">
+            <h2>Weather Checker App</h2>
+            
+            <div class="weather-app-container">
+                <div class="search-section">
+                    <div class="search-input">
+                        <input type="text" id="location" placeholder="Enter Location">
+                        <button id="search">SUBMIT</button>
+                    </div>
+                </div>
+                
+                <div class="sample-weather">
+                    <div class="weather-card" id="city-card-0">
+                        <h3 id="city-name-0">Loading...</h3>
+                        <div class="temperature" id="city-temp-0">--°C</div>
+                        <div class="condition" id="city-condition-0">Loading...</div>
+                    </div>
+                    <div class="weather-card" id="city-card-1">
+                        <h3 id="city-name-1">Loading...</h3>
+                        <div class="temperature" id="city-temp-1">--°C</div>
+                        <div class="condition" id="city-condition-1">Loading...</div>
+                    </div>
+                    <div class="weather-card" id="city-card-2">
+                        <h3 id="city-name-2">Loading...</h3>
+                        <div class="temperature" id="city-temp-2">--°C</div>
+                        <div class="condition" id="city-condition-2">Loading...</div>
+                    </div>
+                    <div class="weather-card" id="city-card-3">
+                        <h3 id="city-name-3">Loading...</h3>
+                        <div class="temperature" id="city-temp-3">--°C</div>
+                        <div class="condition" id="city-condition-3">Loading...</div>
+                    </div>
+                </div>
+                
+                <div class="current-weather">
+                    <h2>Current Weather</h2>
+                    <div class="current-info">
+                        <div>
+                            <h3 id="current-location">Location Name</h3>
+                            <div class="current-temp" id="current-temp">25°C</div>
+                            <div class="current-condition" id="current-condition">Cloudy</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="forecast-section">
+                    <h2>7 Day Weather Forecast</h2>
+                    <div class="forecast-grid">
+                        <div class="forecast-day">
+                            <h4>Today</h4>
+                            <div class="day-forecast">
+                                <div class="weather-icon" id="day-icon-0">☀️</div>
+                                <span class="day-temp" id="day-temp-0">25°C</span>
+                            </div>
+                            <div class="night-forecast">
+                                <div class="weather-icon" id="night-icon-0">🌙</div>
+                                <span class="night-temp" id="night-temp-0">18°C</span>
+                            </div>
+                        </div>
+                        <div class="forecast-day">
+                            <h4>Tomorrow</h4>
+                            <div class="day-forecast">
+                                <div class="weather-icon" id="day-icon-1">⛅</div>
+                                <span class="day-temp" id="day-temp-1">27°C</span>
+                            </div>
+                            <div class="night-forecast">
+                                <div class="weather-icon" id="night-icon-1">🌙</div>
+                                <span class="night-temp" id="night-temp-1">20°C</span>
+                            </div>
+                        </div>
+                        <div class="forecast-day">
+                            <h4>Wed</h4>
+                            <div class="day-forecast">
+                                <div class="weather-icon" id="day-icon-2">🌧️</div>
+                                <span class="day-temp" id="day-temp-2">22°C</span>
+                            </div>
+                            <div class="night-forecast">
+                                <div class="weather-icon" id="night-icon-2">🌧️</div>
+                                <span class="night-temp" id="night-temp-2">16°C</span>
+                            </div>
+                        </div>
+                        <div class="forecast-day">
+                            <h4>Thursday</h4>
+                            <div class="day-forecast">
+                                <div class="weather-icon" id="day-icon-3">☀️</div>
+                                <span class="day-temp" id="day-temp-3">30°C</span>
+                            </div>
+                            <div class="night-forecast">
+                                <div class="weather-icon" id="night-icon-3">🌙</div>
+                                <span class="night-temp" id="night-temp-3">22°C</span>
+                            </div>
+                        </div>
+                        <div class="forecast-day">
+                            <h4>Friday</h4>
+                            <div class="day-forecast">
+                                <div class="weather-icon" id="day-icon-4">⛅</div>
+                                <span class="day-temp" id="day-temp-4">28°C</span>
+                            </div>
+                            <div class="night-forecast">
+                                <div class="weather-icon" id="night-icon-4">🌙</div>
+                                <span class="night-temp" id="night-temp-4">19°C</span>
+                            </div>
+                        </div>
+                        <div class="forecast-day">
+                            <h4>Saturday</h4>
+                            <div class="day-forecast">
+                                <div class="weather-icon" id="day-icon-5">☀️</div>
+                                <span class="day-temp" id="day-temp-5">32°C</span>
+                            </div>
+                            <div class="night-forecast">
+                                <div class="weather-icon" id="night-icon-5">🌙</div>
+                                <span class="night-temp" id="night-temp-5">24°C</span>
+                            </div>
+                        </div>
+                        <div class="forecast-day">
+                            <h4>Sunday</h4>
+                            <div class="day-forecast">
+                                <div class="weather-icon" id="day-icon-6">🌦️</div>
+                                <span class="day-temp" id="day-temp-6">26°C</span>
+                            </div>
+                            <div class="night-forecast">
+                                <div class="weather-icon" id="night-icon-6">🌙</div>
+                                <span class="night-temp" id="night-temp-6">17°C</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Have questions about our Weather Checker App? We'd love to hear from you!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <a href="mailto:judeamancio2@gmail.com">judeamancio2@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Project:</strong>
+                            <a href="index.html">Weather Checker App</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Group 7 - Weather Checker App. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
